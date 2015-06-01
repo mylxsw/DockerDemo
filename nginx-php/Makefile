@@ -9,5 +9,9 @@ run:
 	docker run --name nginx_server -d -p 80:80 --link phpfpm:phpfpm -v /Users/mylxsw/Dockers/nginx-php/nginx.conf:/etc/nginx/nginx.conf --volumes-from phpfpm  nginx
 	docker ps
 
+restart:
+	docker restart phpfpm
+	docker restart nginx_server
+
 log:
 	docker logs -f nginx_server
